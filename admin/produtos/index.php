@@ -3,10 +3,16 @@ require_once('../inc/conexao.php');
 
 require_once $base_path . 'inc/cabecalho.php';
 
-$sql = 'SELECT * FROM produtos';
+$sql = 'SELECT id, nome, preco FROM produtos';
 $resultado = pg_query($conexao, $sql);
 $resultado_array = pg_fetch_all($resultado);
 ?>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="<?php echo $base_url; ?>">Admin</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Produtos</li>
+  </ol>
+</nav>
 <h2>Produtos</h2>
 <a class="btn btn-primary" href="<?php echo $base_url.'produtos/criar.php'; ?>">Adicionar</a>
 <table class="table">

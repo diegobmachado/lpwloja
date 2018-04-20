@@ -10,9 +10,10 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 	<div class="collapse navbar-collapse" id="navbarCollapse">
+        <a class="btn btn-sm btn-primary" href="<?php echo $base_url.'../index.php'; ?>">Loja</a>
         <?php
-        if(isset($_SESSION['nome'])){
-        	echo '<a align="right" class="btn btn-sm btn-primary" href="/loja/admin/logout.php">Logout</a>';
+        if(isset($_SESSION['admin'])){
+        	echo '<a class="btn btn-sm btn-inverse" href="'.$base_url.'logout.php">Logout</a>';
         }
         ?>
 	</div>

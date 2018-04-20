@@ -1,6 +1,3 @@
-<?php
-require_once('inc/conexao.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +10,12 @@ require_once('inc/conexao.php');
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 	<div class="collapse navbar-collapse" id="navbarCollapse">
-        <a class="btn btn-primary" href="admin/index.php">Admin</a>
+        <a class="btn btn-sm btn-primary" href="<?php echo $base_url.'admin/index.php'; ?>">Admin</a>
+        <?php
+        if(isset($_SESSION['admin'])){
+        	echo '<a class="btn btn-sm btn-inverse" href="'.$base_url.'logout.php">Logout</a>';
+        }
+        ?>
 	</div>
 </nav>
 <main role="main" class="container">

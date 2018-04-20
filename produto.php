@@ -1,11 +1,19 @@
 <?php
-require_once('inc/cabecalho.php');
+require_once('inc/conexao.php');
+require_once($base_path . 'inc/cabecalho.php');
 $id = (int) $_GET['codigo']; //cast
 
 $sql = 'SELECT nome, descricao, preco FROM produtos WHERE id = '.$id;
 $produto = pg_query($conexao, $sql);
 $produto_array = pg_fetch_array($produto);
 ?>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="<?php echo $base_url; ?>">Home</a></li>
+    <li class="breadcrumb-item"><a href="<?php echo $base_url; ?>produtos/">Produtos</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><?php echo $produto_array['nome']; ?></li>
+  </ol>
+</nav>
 <h1 class="display-4"><?php echo $produto_array['nome']; ?></h1>
 <div class="container">
 	<div class="row">
@@ -22,4 +30,4 @@ $produto_array = pg_fetch_array($produto);
 </div>
 <?php
 echo '<a class="btn btn-info" href="index.php">Voltar</a>';
-require_once('inc/rodape.php');
+require_once($base_path . 'inc/rodape.php');

@@ -7,5 +7,5 @@ $base_url = 'http://localhost/loja/admin/';
 
 $conexao = pg_connect('host=localhost port=5432 dbname=lojalpw user=postgres password=senha5');
 if(!$conexao){
-	echo 'nao rolou';
+	echo 'Não conectou com o banco de dados.';
 }

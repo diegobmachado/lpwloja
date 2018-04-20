@@ -1,5 +1,7 @@
 <?php
-require_once('inc/cabecalho.php');
+require_once('inc/conexao.php');
+require_once($base_path . 'inc/cabecalho.php');
+
 $sql = 'SELECT id, nome, preco FROM produtos';
 $resultado = pg_query($conexao, $sql);
 $resultado_array = pg_fetch_all($resultado);
@@ -24,4 +26,4 @@ $resultado_array = pg_fetch_all($resultado);
 	</div>
 </div>
 <?php
-require_once('inc/rodape.php');
+require_once($base_path . 'inc/rodape.php');

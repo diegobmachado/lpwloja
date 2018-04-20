@@ -2,8 +2,13 @@
 require_once('inc/conexao.php');
 require_once('inc/cabecalho.php');
 if(isset($_SESSION['nome'])){
-	echo 'dashboard';
 	?>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="<?php echo $base_url; ?>">Admin</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+		</ol>
+	</nav>
 	<ul>
 		<li><a href="<?php echo $base_url.'produtos'; ?>">Produtos</a></li>
 	</ul>
