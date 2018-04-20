@@ -15,7 +15,7 @@ $produto_array = pg_fetch_array($produto);
 		<div class="col-sm">
 			<p class="lead"><?php echo $produto_array['descricao']; ?></p>
 			<hr class="my-4">
-			<h3 class="text-right">R$ <?php echo str_replace('.', ',', $produto_array['preco']); ?></h3>
+			<p class="text-right">R$ <?php echo str_replace('.', ',', $produto_array['preco']); ?></p>
 			<a class="btn btn-success" href="#" role="button">Adicionar ao carrinho</a>
 		</div>
 	</div>
