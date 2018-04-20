@@ -1,4 +1,5 @@
 <?php
+require_once('inc/conexao.php');
 require_once('inc/cabecalho.php');
 if(isset($_SESSION['nome'])){
 	echo 'dashboard';
