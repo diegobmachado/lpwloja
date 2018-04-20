@@ -1,6 +1,3 @@
-<?php
-require_once('inc/conexao.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>

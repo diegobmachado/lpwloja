@@ -12,6 +12,6 @@ if($res != false){
 		$res = pg_fetch_assoc($res);
 
 		$_SESSION['nome'] = $res['nome'];
-		header('Location: admin/index.php');
+		header('Location: '.$base_url.'index.php');
 	}
 }
